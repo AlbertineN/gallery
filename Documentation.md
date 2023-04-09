@@ -16,3 +16,6 @@ Created a heroku app for my project's production environment.
 
 //Step five
 updtaed my pipeline to install dependancies needed clone the project from git, build the project by running npm install since its a nodejs app. confirgured my connection to the mongodb cloud database and finally deploy it to heroku.
+
+//Step Six
+Deployed to heroku and was able to access the website. I Also updated the website to read MILESTONE 2.
