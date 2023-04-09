@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "mocha --exit"
+   "test": "mocha --reporter list"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +21,6 @@
   "devDependencies": {
     "chai": "^3.2.0",
     "chai-http": "^1.0.0",
-    "mocha": "^8.1.1"
+    "mocha": "^8.4.0"
   }
 }
