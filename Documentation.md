@@ -11,4 +11,4 @@ Created a pipeline GP-Final
 Configured my git webhook and jenkins to trigger builds automatically after a git push request.
 
 //Step Four
-Created a heroku app for my project's production environment.test
+Created a heroku app for my project's production environment.
