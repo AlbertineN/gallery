@@ -27,4 +27,4 @@ Configured my test manager "mocha" to test and exit by adding an exit flag. Also
 Configured Slack to notify me and the Team manager of successfull deployments to heroku. Added Milestone 4 to the landing page.
 
 
-test
+
