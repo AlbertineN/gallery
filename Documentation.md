@@ -24,5 +24,5 @@ Deployed to heroku and was able to access the website. I Also updated the websit
 Configured my test manager "mocha" to test and exit by adding an exit flag. Also configured an email notification for a successful build and test.
 
 //step seven
-Configured Slack to notify me and the Team manager of successfull deployments to heroku.
+Configured Slack to notify me and the Team manager of successfull deployments to heroku. test
 
