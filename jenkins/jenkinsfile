@@ -15,6 +15,11 @@ pipeline{
             }
         }
         stage('test'){
+            post{
+                failure{
+                    mail bcc: '', body: 'The npm test failed. Build status failed.', cc: '', from: '', replyTo: '', subject: 'Failed test', to: 'albertinenginga@gmail.com'
+                }
+            }
             steps{
                sh 'npm test'
             }
