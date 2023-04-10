@@ -1,0 +1,40 @@
+pipeline{
+    agent any
+    tools{
+        nodejs 'nodejs-19'
+    }
+    stages{
+        stage('clone the repository'){
+            steps{
+                git 'https://github.com/AlbertineN/gallery'
+            }
+        }
+        stage('build stage'){
+            steps{
+                sh 'npm install'
+            }
+        }
+        stage('test'){
+            steps{
+               sh 'npm test'
+            }
+        }
+        stage('email notification on test'){
+            steps{
+                mail bcc: '', body: 'The build and Test were successful. App deploying to Heroku. Expect a Slack notification once done.', cc: '', from: '', replyTo: '', subject: 'Build and Test success', to: 'albertinenginga@gmail.com'
+            }
+        }
+        stage('Deploy to Heroku') {
+            steps {
+                withCredentials([usernameColonPassword(credentialsId: 'galleryip', variable: 'HEROKU_CREDENTIALS')]){
+                sh 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/galleryip.git master'
+                }
+            }
+        }
+        stage('Slack notification'){
+            steps{
+                slackSend channel: '#albertine_ip1', color: '#008000', message: "Deployment of ${BUILD_ID} to heroku successful. Click the link to view results. https://galleryip.herokuapp.com/", tokenCredentialId: 'albertine_ip'
+            }
+        }
+    }
+}
